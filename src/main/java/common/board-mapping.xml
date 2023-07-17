@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+<!-- 특정 게시물 조회하기 -->
+	<select id="getBoardListById" resultType="boarddto">
+		SELECT * FROM board WHERE boardid = #{boardid};
+	</select>
+
+<!-- 게시글 작성하기 -->
+	<insert id="boardWriting" parameterType="boarddto">
+		insert into board( userid, boardCategory, title, boardContent, attachment)
+		values( #{userid}, #{boardCategory}, #{title}, #{boardContent}, #{attachment})
+	</insert>
+
+<!-- 게시물 조회수 +1 -->
+	<update id="boardViewUp" parameterType="int">
+		UPDATE board  SET boardCount = boardCount+1 WHERE boardid = #{boardid}
+	</update>
+
+<!-- 게시물 수정 -->
+	<update id="boardUpdating" parameterType="boarddto">
+		UPDATE board SET title=#{title}, boardContent = #{boardContent} WHERE boardid = #{boardid}
+	</update>
+
+<!-- 게시물 삭제 -->
+	<delete id="boardDelete" parameterType="int">
+		delete from board where boardid=#{boardid};
+	</delete>
+
+
+<!-- 게시물 댓글 전체 조회하기 -->
+	<select id="getCommentsByBoardId" resultType="boardcommentdto" parameterType="int">
+        SELECT * FROM boardComment WHERE boardid = #{boardid};
+    </select>
+
+<!-- 게시물 댓글 작성하기 -->
+    <insert id="insertBoardComment" parameterType="boardcommentdto">
+        INSERT INTO boardComment (boardid, userid, bcCreateAt, contents)
+        VALUES (#{boardid}, #{userid}, #{bcCreateAt}, #{contents});
+    </insert>
+    
+<!-- 게시물 조회하기 -->
+	<select id="listPage" resultType="boarddto" parameterType="dto.Criteria">
+		SELECT boardid, userid, title, creatAt, boardCount, boardLike, boardContent
+		FROM ( SELECT boardid, userid, title, creatAt, boardCount, boardLike, boardContent,
+		ROW_NUMBER() OVER(ORDER BY boardid ASC) AS rNum 
+		FROM board
+		) 
+		board
+		WHERE rNum BETWEEN #{rowStart} AND #{rowEnd}
+		ORDER BY boardid ASC;
+	</select>
+
+<!-- 게시물 총 갯수 -->
+	<select id="listCount" resultType="int">
+		SELECT COUNT(boardid) 
+		FROM board 
+		WHERE boardid > 0;
+	</select>
+	
+</mapper>

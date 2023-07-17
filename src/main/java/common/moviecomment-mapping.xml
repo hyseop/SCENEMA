@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="a">
+
+	<insert id="insertMovieComment" parameterType="dto.MovieCommentDTO">
+		insert into moviecomment
+		(movieid, userid, score, createAt, contents) 
+		values(#{movieid}, #{userid}, #{score}, now(), #{contents})
+	</insert>
+	
+	<select id="getMovieComments" parameterType="int" resultType="dto.MovieCommentDTO">
+		select * from moviecomment where movieid = #{movieid} order by createAt desc;
+	</select>
+	
+	<select id="getPagingComments" parameterType="hashMap" resultType="dto.MovieCommentDTO">
+		select * from moviecomment where movieid=#{movieid} order by createAt desc limit #{page}, #{limit};
+	</select>
+	
+	<select id="getMovieScore" parameterType="int" resultType="double">
+		select avg(score) from moviecomment where movieid=#{movieid};
+	</select>
+	
+	<select id="getCommentsCount" parameterType="int" resultType="int">
+		select count(*) from moviecomment where movieid=#{movieid};
+	</select>
+	
+	<delete id="deleteComment" parameterType="int">
+		delete from moviecomment where movieCommentid=#{movieCommentid};
+	</delete>
+	
+	<update id="updateLikeUp" parameterType="int"> 
+		UPDATE moviecomment SET commentLike = commentLike+1 WHERE movieCommentid=#{movieCommentid};
+	</update>
+	
+	<update id="updateLikeDown" parameterType="int"> 
+		UPDATE moviecomment SET commentLike = commentLike-1 WHERE movieCommentid=#{movieCommentid};
+	</update>
+	
+</mapper>

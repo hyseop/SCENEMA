@@ -1,0 +1,70 @@
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css");
+
+* { font-family: 'NanumSquareNeoBold'; }
+
+article {
+	border: 1px solid lightgrey;
+	margin: 50px auto;
+	padding : 20px;
+	width: 700px;
+	height: 800px;
+}
+
+article h2{
+	text-align:center;
+	margin: 25px 0px;
+	border-bottom: 2px solid #FF7322;
+	padding-bottom:10px;
+}
+
+#likemovies {
+	border-collapse: collapse;
+	border-top: 2px solid lightgrey;
+	border-bottom: 2px solid lightgrey;
+}
+
+#likemovies tr td{
+	border-bottom: 1px solid lightgrey;
+	height: 30px;
+}
+
+#likemovies tr td:nth-child(1) {
+	text-align: center;
+	width : 500px;
+}
+#likemovies tr td:nth-child(2) {
+	text-align: center;
+	width : 200px;
+}
+
+#likemovies tr td button {
+	border-width: 0px;
+	background-color: transparent;
+	color:#FF7322;
+	display: flex;
+	align-items: center;
+	margin:0px auto;
+}
+
+#pagebtns {
+	width: 700px;
+	margin-top:20px;
+	display: flex;
+	justify-content: center;
+}
+
+#pagebtns a {
+	width: 30px;
+	height: 30px;
+	line-height:30px;
+	margin:1px;
+	display: flex;
+	justify-content: center;
+	color:black; 
+	text-decoration: none;
+}
+
+#pagebtns a:hover {
+	background-color: #FF7322;
+	color:white;
+}

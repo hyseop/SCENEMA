@@ -1,0 +1,101 @@
+@import
+	url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css")
+	;
+
+* {
+	font-family: 'NanumSquareNeoBold';
+}
+
+
+article {
+	border: 1px solid lightgrey;
+	margin: 50px auto;
+	padding : 20px;
+	width: 450px;
+	height: 700px;
+}
+
+article h2{
+	text-align: center;
+	margin: 25px 0px;
+}
+
+.formindiv {
+	margin : 15px auto;
+	width : 400px;
+}
+
+.formindiv>p {
+	font-size : 12px;
+	line-height : 12px;
+	margin:5px 0px;
+}
+
+input {
+	border: 1px solid lightgrey;
+	height: 25px;
+	padding: 5px 10px;
+	width: 378px;
+}
+
+.formindiv>.email-tag {
+	margin-bottom: 0px;
+}
+
+.formindiv>.etc-tag {
+	margin-bottom: 11px;
+}
+
+
+#emailinner {
+	display:inline-block;
+	justify-content:space-between;
+	align-items: center;
+}
+
+#emailinner > input[type='text']{
+	width: 100px;
+}
+
+select {
+	border: 1px solid lightgrey;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding: 5px 10px;
+	width: 125px;
+	height: 37px;
+}
+
+#userid {
+	width: 273px;
+}
+
+#idCheckButton {
+	background-color: #FF7322;
+	border: 1px solid #FF7322;
+	color: white;
+	width:100px;
+	height: 37px;
+	padding: 5px 10px;
+}
+
+#idCheckButton:hover {
+	background-color: white;
+	color: #FF7322;
+}
+
+#signUpButton {
+	background-color: #FF7322;
+	border: 1px solid #FF7322;
+	color: white;
+	padding: 10px 40px;
+	width:400px;
+	height: 40px;
+	margin-top:15px;
+}
+
+#signUpButton:hover {
+	background-color: white;
+	border: 1px solid #FF7322;;
+	color: #FF7322;
+}

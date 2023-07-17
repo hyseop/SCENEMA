@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- 선택// 로그 남기는 api 설정 -->
+	<settings>
+		<setting name="logImpl" value="LOG4J" />
+	</settings>
+
+	<!-- 필수// db 연결 정보 설정 = mybatis 자동 연결 -->
+	<environments default="mydb">
+		<environment id="mydb">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver" />
+				<property name="url"
+					value="jdbc:mysql://127.0.0.1:3306/scenemadb" />
+				<property name="username" value="scenema" />
+				<property name="password" value="scenema" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- 필수// sql정의 xml설정 -->
+	<mappers>
+		<mapper resource="common/moviedb-mapping.xml" />
+	</mappers>
+</configuration>

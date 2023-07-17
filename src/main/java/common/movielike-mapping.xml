@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="movielike">
+
+	<select id="isMovieLike" resultType="int" parameterType="dto.MovieLikeDTO">
+        SELECT count(*) FROM movielike where movieid=#{movieid} and userid=#{userid};
+    </select>
+    
+    <insert id="insertMovieLike" parameterType="dto.MovieLikeDTO">
+        INSERT INTO movielike VALUES (#{movieid}, #{userid});
+    </insert>
+
+    <delete id="deleteMovieLike" parameterType="dto.MovieLikeDTO">
+    	delete from movielike where movieid=#{movieid} and userid=#{userid};
+    </delete>
+    
+    <select id="countMovieLike" resultType="int" parameterType="int">
+        SELECT count(*) FROM movielike where movieid=#{movieid};
+    </select>
+    
+    <select id="listMovieLikeByUser" resultType="dto.MovieLikeDTO" parameterType="String">
+        SELECT * FROM movielike where userid=#{userid};
+    </select>
+    
+    <select id="listMovieLikeByUserPaging" resultType="dto.MovieLikeDTO" parameterType="hashmap">
+        SELECT * FROM movielike where userid=#{userid} limit #{page}, 20;
+    </select>
+    
+    <!-- ★영화댓글좋아요★ -->
+    
+    <select id="isMovieCmtLike" resultType="int" parameterType="dto.MovieCmtLikeDTO">
+        SELECT count(*) FROM moviecommentlike where movieCommentid=#{movieCommentid} and userid=#{userid};
+    </select>
+    
+    <insert id="insertMovieCmtLike" parameterType="dto.MovieCmtLikeDTO">
+        INSERT INTO moviecommentlike VALUES (#{movieCommentid}, #{userid});
+    </insert>
+
+    <delete id="deleteMovieCmtLike" parameterType="dto.MovieCmtLikeDTO">
+    	delete from moviecommentlike where movieCommentid=#{movieCommentid} and userid=#{userid};
+    </delete>
+    
+    <select id="countMovieCmtLike" resultType="int" parameterType="int">
+        SELECT count(*) FROM moviecommentlike where movieCommentid=#{movieCommentid};
+    </select>
+    
+    
+</mapper>

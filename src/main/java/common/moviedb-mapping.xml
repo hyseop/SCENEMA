@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="a">
+
+	<insert id="insertMovieDB" parameterType="dto.MovieDTO">
+		insert into moviedb
+		(title, titleEng, story, genre, runtime, 
+		 director, releaseDate, rating, posterurl, stillcuturls, 
+		 videourl, comments, score, movielike) 
+		values(#{title}, #{titleEng}, #{story}, #{genre}, #{runtime},
+		#{director}, #{releaseDate}, #{rating}, #{posterurl}, #{stillcuturls},
+		#{videourl}, #{comments}, #{score}, #{movielike} )
+	</insert>
+	
+	<select id="getMovieFromID" parameterType="int" resultType="dto.MovieDTO">
+		select * from moviedb where movieid = #{movieid}
+	</select>
+	
+	<select id="getMovieFromTitle" parameterType="String" resultType="dto.MovieDTO">
+		select * from moviedb where replace(title,' ','') = replace(#{title},' ','');
+	</select>
+	
+	<select id="getAllMovie" resultType="dto.MovieDTO">
+		select * from moviedb
+	</select>
+
+	<select id="getGenreMovie" resultType="dto.MovieDTO" parameterType="String">
+		select * from moviedb where genre like concat('%',#{genre},'%') order by movielike desc limit 0, 5;
+	</select>
+	
+</mapper>
