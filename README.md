@@ -22,7 +22,7 @@
 </br>
 
 ### 4. 기술 및 도구
-> Java11, JSP, Spring, Maven, MySQL, MyBatis, eclipse STS3
+> Java 11, JSP, Spring, Maven, MySQL, MyBatis, eclipse STS3
 
 </br>
 
