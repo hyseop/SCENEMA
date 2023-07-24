@@ -27,13 +27,22 @@
 </br>
 
 ### 5. ERD 설계
-> ![](https://github.com/hyseop/SCENEMA/blob/master/SCENEMA%20ERD.png)
+![](https://github.com/hyseop/SCENEMA/blob/master/SCENEMA%20ERD.png)
 
 </br>
 
 ### 6. 담당 파트 기능
-> 로그인 및 회원가입
+> 로그인, 회원가입 등 회원 관련
 > 
+> > MyBatis Mapper  
+> > 🔗[1](https://github.com/hyseop/SCENEMA/blob/master/src/main/java/common/login-mapping.xml), [2](https://github.com/hyseop/SCENEMA/blob/master/src/main/java/common/user-mapping.xml)
+> >
+> > Spring MVC  
+> > 🔗[1](https://github.com/hyseop/SCENEMA/blob/master/src/main/java/controller/LoginController.java), [2](https://github.com/hyseop/SCENEMA/blob/master/src/main/java/controller/MyInfoController.java), [3](https://github.com/hyseop/SCENEMA/blob/master/src/main/java/controller/SignUpController.java), [4](https://github.com/hyseop/SCENEMA/blob/master/src/main/java/dao/LoginDAO.java), [5](https://github.com/hyseop/SCENEMA/blob/master/src/main/java/dao/SignUpDAO.java), [6](https://github.com/hyseop/SCENEMA/blob/master/src/main/java/dto/SignUpDTO.java), [7](https://github.com/hyseop/SCENEMA/blob/master/src/main/java/dto/UserDTO.java), [8](https://github.com/hyseop/SCENEMA/blob/master/src/main/java/service/LoginService.java), [9](https://github.com/hyseop/SCENEMA/blob/master/src/main/java/service/SignUpService.java), [10](https://github.com/hyseop/SCENEMA/blob/master/src/main/java/service/SignUpServiceImpl.java)
+> > 
+> > JSP, jQuery Ajax/JavaScript  
+> > 🔗[1](https://github.com/hyseop/SCENEMA/blob/master/src/main/webapp/WEB-INF/views/MyInfo.jsp), [2](https://github.com/hyseop/SCENEMA/blob/master/src/main/webapp/WEB-INF/views/MyInfoUpdate.jsp), [3](https://github.com/hyseop/SCENEMA/blob/master/src/main/webapp/WEB-INF/views/SignUpForm.jsp), [4](https://github.com/hyseop/SCENEMA/blob/master/src/main/webapp/WEB-INF/views/login.jsp)
+> >
 
 </br>
 
@@ -44,9 +53,9 @@
 >> 
 >> 기간 및 학습 기술에 비해 가득했던 욕심
 >>  
->> 이로 인해 전체 흐름을 놓치고 코드에 끌려다니기 바빴음
->>
->> 검색 또한 부족한 기술 이해도로 인해 제한적
+>>> 이로 인해 전체 흐름을 놓치고 코드에 끌려다니기 바빴음
+>>>
+>>> 검색 또한 부족한 기술 이해도로 인해 제한적
 >> 
 >> 늦은 회고 작성과 늦은 코드 리뷰에 대한 아쉬움
 >
