@@ -43,4 +43,24 @@
 > > 
 > > JSP, jQuery Ajax/JavaScript  
 > > 🔗[1](https://github.com/hyseop/SCENEMA/blob/master/src/main/webapp/WEB-INF/views/MyInfo.jsp), [2](https://github.com/hyseop/SCENEMA/blob/master/src/main/webapp/WEB-INF/views/MyInfoUpdate.jsp), [3](https://github.com/hyseop/SCENEMA/blob/master/src/main/webapp/WEB-INF/views/SignUpForm.jsp), [4](https://github.com/hyseop/SCENEMA/blob/master/src/main/webapp/WEB-INF/views/login.jsp)
+
+</br>
+
+### 7. 회고
+> 엉망진창의 나와, 검색 및 수업 예제로 이루어진, 미완성의, 나의 것이 아닌, 첫 프로젝트
+>
+> > 👎
+> > 
+> > 기간 및 학습 기술에 비해 가득했던 욕심
+> >  
+> > 전체 흐름을 놓치고 코드에 끌려다니기 바빴음
+> > 
+> > 늦은 회고 작성과 늦은 코드 리뷰에 대한 아쉬움
+> > 
+> > 
 > >
+> > 👍
+> > 
+> > 서툴고 고된 첫 작업이었지만 작동하는 모습에 느꼈던 성취감
+> > 
+> > 일부 전공자 팀원들 덕분에 접하게 되었던 여러 툴들 (Git, Figma, ERD) // Git 수업은 이후 진행됨
